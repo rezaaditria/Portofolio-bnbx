@@ -21,17 +21,17 @@ const Navbar = () => {
           </div>
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4 justify-end">
-              <a href="/">
+              <a href="#">
                 <div className="hover:text-[#FF204E] text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2">
                   present
                 </div>
               </a>
-              <a href="/about">
+              <a href="#skills">
                 <div className="hover:text-[#FF204E] text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2">
                   skills
                 </div>
               </a>
-              <a href="/contact">
+              <a href="#">
                 <div className="hover:text-[#FF204E] text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2">
                   Contact
                 </div>

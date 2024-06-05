@@ -14,13 +14,13 @@ const BentoBox = ({ items }) => {
   };
 
   return (
-    <div className="mx-32">
-      <div className="grid sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-3 px-5 py-3 ">
+    <div className="mx-32 ">
+      <div className="grid sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-3 lg:px-5 md:px-5 sm:px-0 py-3 ">
         {items.map((item, index) =>
           item.skill1 ? (
             <div
               key={index}
-              className={`rounded-3xl p-4 text-center ${item.size}`}
+              className={`rounded-3xl p-4 text-center  ${item.size}`}
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                 backdropFilter: "blur(10px)",
@@ -89,11 +89,7 @@ const BentoBox = ({ items }) => {
           ) : item.project ? (
             <div
               key={index}
-              className={`rounded-3xl p-4 text-center ${item.size}`}
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.0)",
-                backdropFilter: "blur(10px)",
-              }}
+              className={`rounded-3xl h-[100px] p-4 text-center  sm:col-span-1 md:col-span-6 lg:col-span-12`}
             >
               <h3 className="text-white text-4xl font-bold font-sans my-2">
                 {item.title}
@@ -117,11 +113,11 @@ const BentoBox = ({ items }) => {
               />
               {hoveredIndex === index && (
                 <div className="absolute bottom-0 left-0 w-full flex items-center justify-center opacity-100 transition-opacity duration-1000">
-                  <div className="bg-white w-full bg-opacity-80 p-4 rounded-b-3xl ">
+                  <div className="bg-white w-full max-h-40 overflow-auto bg-opacity-80 p-4 rounded-b-3xl ">
                     <h3 className="text-[#FF204E] text-xl font-bold font-sans">
                       {item.title}
                     </h3>
-                    <p className="text-black mt-2">{item.description}</p>
+                    <p className="text-black  mt-2">{item.description}</p>
                   </div>
                 </div>
               )}
