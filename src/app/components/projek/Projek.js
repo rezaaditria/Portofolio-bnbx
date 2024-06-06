@@ -2,10 +2,19 @@
 import React, { useState } from "react";
 
 const Projek = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [tappedIndex, setTappedIndex] = useState(null);
 
-  const handleTouchStart = (index) => setHoveredIndex(index);
-  const handleTouchEnd = () => setHoveredIndex(null);
+  const handleTouchStart = (index) => {
+    if (tappedIndex === index) {
+      setTappedIndex(null); // Toggle off if already tapped
+    } else {
+      setTappedIndex(index); // Set the tapped index
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    e.stopPropagation(); // Prevent parent elements from scrolling
+  };
 
   const projek = [
     {
@@ -35,28 +44,28 @@ const Projek = () => {
       <div className="mx-4 md:mx-16 lg:mx-36">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           {projek.map((item, index) => (
-            <a href={item.link} key={index}>
+            <div key={index}>
               <div
                 className={`relative rounded-3xl text-center my-1 ${
                   item.size
-                } ${hoveredIndex === index ? "hovered" : ""}`}
+                } ${tappedIndex === index ? "tapped" : ""}`}
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.2)",
                   backdropFilter: "blur(10px)",
                 }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
                 onTouchStart={() => handleTouchStart(index)}
-                onTouchEnd={handleTouchEnd}
               >
                 <img
                   src={item.image}
                   className="w-full h-auto rounded-3xl"
                   alt={item.title}
                 />
-                {hoveredIndex === index && (
-                  <div className="absolute bottom-0 left-0 w-full flex items-center justify-center opacity-100 transition-opacity duration-1000">
-                    <div className="bg-white w-full max-h-40 overflow-auto bg-opacity-80 p-4 rounded-b-3xl md:max-h-none md:h-15">
+                {tappedIndex === index && (
+                  <div
+                    className="absolute bottom-0 left-0 w-full flex items-center justify-center opacity-100 transition-opacity duration-500"
+                    onTouchMove={handleTouchMove}
+                  >
+                    <div className="bg-white w-full max-h-40 overflow-y-auto bg-opacity-80 p-4 rounded-b-3xl md:max-h-none md:h-15">
                       <h3 className="text-[#FF204E] text-base md:text-xl font-bold font-sans">
                         {item.title}
                       </h3>
@@ -86,7 +95,7 @@ const Projek = () => {
                   </div>
                 )}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
