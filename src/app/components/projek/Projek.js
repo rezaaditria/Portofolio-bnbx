@@ -20,8 +20,8 @@ const Projek = () => {
     {
       image: "/images/projek/eos.png",
       title: "Dashboard Auto insight",
-      description:
-        "In the Dashboard Auto Insight project, I focus on crafting the user-friendly interface and diverse charts to visualize data effectively. Collaborating with design and backend teams, my goal is to deliver an efficient frontend experience that empowers users to gain insights effortlessly. The project is owned by PT Telkom Indonesia, where I'm interning.",
+      // description:
+      //   "In the Dashboard Auto Insight project, I focus on crafting the user-friendly interface and diverse charts to visualize data effectively. Collaborating with design and backend teams, my goal is to deliver an efficient frontend experience that empowers users to gain insights effortlessly. The project is owned by PT Telkom Indonesia, where I'm interning.",
       description2: "(organization only, live demo & repository unavailable)",
       size: "sm:col-span-1 md:col-span-1 lg:col-span-1",
       liveLink: null, // Add the live project link here
@@ -30,8 +30,8 @@ const Projek = () => {
     {
       image: "/images/projek/mbclab.png",
       title: "MBC Laboratory website",
-      description:
-        "As a frontend developer on the MBC Lab project, I design and implement user-friendly interfaces and interactive components. Using modern frontend technologies, I ensure the application is visually appealing, responsive, and intuitive, enhancing the overall user experience. Through close collaboration with the backend team, I facilitate seamless and efficient data interactions, contributing to the project's success.",
+      // description:
+      //   "As a frontend developer on the MBC Lab project, I design and implement user-friendly interfaces and interactive components. Using modern frontend technologies, I ensure the application is visually appealing, responsive, and intuitive, enhancing the overall user experience. Through close collaboration with the backend team, I facilitate seamless and efficient data interactions, contributing to the project's success.",
       size: "sm:col-span-1 md:col-span-1 lg:col-span-1",
       liveLink: "https://website-umber-alpha.vercel.app/", // Add the live project link here
       repoLink: "https://github.com/mbclab23/Website/tree/development", // Add the repository link here
