@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const BentoBox = ({ items }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -14,116 +13,45 @@ const BentoBox = ({ items }) => {
   };
 
   return (
-    <div className="mx-32 ">
-      <div className="grid sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-3 lg:px-5 md:px-5 sm:px-0 py-3 ">
-        {items.map((item, index) =>
-          item.skill1 ? (
-            <div
-              key={index}
-              className={`rounded-3xl p-4 text-center  ${item.size}`}
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                backdropFilter: "blur(10px)",
-              }}
-            >
-              <h3 className="text-white text-4xl font-bold font-sans my-2">
-                {item.title}
-              </h3>
-              <ul className="grid grid-cols-3 gap-4 p-5">
-                <li className="mx-auto mb-3">
+    <div className="mx-4 md:mx-16 lg:mx-32">
+      <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-3 px-2 md:px-5 py-0">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className={`rounded-3xl p-2 md:p-4 text-center ${item.size}`}
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              backdropFilter: "blur(10px)",
+            }}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <h3 className="text-white text-xl md:text-2xl lg:text-4xl font-bold font-sans my-2">
+              {item.title}
+            </h3>
+            <ul className="grid grid-cols-3 gap-2 md:gap-4 p-2 md:p-5">
+              {[
+                item.skill1,
+                item.skill2,
+                item.skill3,
+                item.skill4,
+                item.skill5,
+                item.skill6,
+                item.skill7,
+                item.skill8,
+                item.skill9,
+              ].map((skill, skillIndex) => (
+                <li key={skillIndex} className="mx-auto mb-3">
                   <img
-                    src={item.skill1}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
+                    src={skill}
+                    className="w-[50px] md:w-[100px] h-auto rounded-md transition-transform hover:scale-110"
+                    alt={`Skill ${skillIndex + 1}`}
                   />
                 </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill2}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill3}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill4}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill5}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill6}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill7}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill8}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-                <li className="mx-auto mb-3">
-                  <img
-                    src={item.skill9}
-                    className="w-[100px] h-auto rounded-md transition-transform hover:scale-110"
-                  />
-                </li>
-              </ul>
-            </div>
-          ) : item.project ? (
-            <div
-              key={index}
-              className={`rounded-3xl h-[100px] p-4 text-center  sm:col-span-1 md:col-span-6 lg:col-span-12`}
-            >
-              <h3 className="text-white text-4xl font-bold font-sans my-2">
-                {item.title}
-              </h3>
-            </div>
-          ) : (
-            <div
-              key={index}
-              className={`relative rounded-3xl text-center ${item.size}`}
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                backdropFilter: "blur(10px)",
-              }}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <img
-                src={item.image}
-                className="w-full h-auto rounded-3xl"
-                alt={item.title}
-              />
-              {hoveredIndex === index && (
-                <div className="absolute bottom-0 left-0 w-full flex items-center justify-center opacity-100 transition-opacity duration-1000">
-                  <div className="bg-white w-full max-h-40 overflow-auto bg-opacity-80 p-4 rounded-b-3xl ">
-                    <h3 className="text-[#FF204E] text-xl font-bold font-sans">
-                      {item.title}
-                    </h3>
-                    <p className="text-black  mt-2">{item.description}</p>
-                  </div>
-                </div>
-              )}
-            </div>
-          )
-        )}
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

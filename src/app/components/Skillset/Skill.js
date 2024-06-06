@@ -13,14 +13,13 @@ const Skill = () => {
       skill7: "/images/C.png",
       skill8: "/images/py.png",
       skill9: "/images/ts.png",
-      title: "skills",
       description: "This is the third item.",
       size: " col-span-12",
     },
   ];
   return (
-    <div id="skills" className="container mx-auto p-1">
-      <BentoBox items={skill} />;
+    <div className="container mx-auto p-1 grid-cols-12 mt-4">
+      <BentoBox items={skill} />
     </div>
   );
 };

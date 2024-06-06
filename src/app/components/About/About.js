@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import BentoBox from "../Bento/Box";
 import Boxcustom from "../Bento/Boxcustom";
 
 //  for sizing project:
@@ -18,11 +16,11 @@ const Home = () => {
       miniprofile: "/images/poto.jpeg",
       introduce: "Hi, I'm Reza.",
       Role: "Front-end developer",
-      size: " sm:col-span-1 md:col-span-4 lg:col-span-8",
       linkIG: "https://www.instagram.com/rezaaditriaa/",
       iconIG: "/images/insta.png",
       linklinked: "https://www.linkedin.com/in/rezaaditria/",
       iconlinked: "/images/linkedin.png",
+      size: " sm:col-span-1 md:col-span-4 lg:col-span-8",
     },
     {
       image: "/images/poto.jpeg",
