@@ -44,7 +44,7 @@ const BentoBox = ({ items }) => {
                 <li key={skillIndex} className="mx-auto mb-3">
                   <img
                     src={skill}
-                    className="w-[50px] md:w-[100px] h-auto rounded-md transition-transform hover:scale-110"
+                    className="w-[50px] md:w-[100px] h-auto rounded-md transition-transform hover:scale-150"
                     alt={`Skill ${skillIndex + 1}`}
                   />
                 </li>

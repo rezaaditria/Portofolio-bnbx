@@ -52,7 +52,10 @@ const Projek = () => {
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.2)",
                   backdropFilter: "blur(10px)",
+                  cursor: "pointer", // Add cursor pointer style
                 }}
+                onMouseEnter={() => setTappedIndex(index)} // Show text box on hover
+                onMouseLeave={() => setTappedIndex(null)} // Hide text box on hover out
                 onTouchStart={() => handleTouchStart(index)}
               >
                 <img
