@@ -40,6 +40,9 @@ const BentoBox = ({ items }) => {
                 item.skill7,
                 item.skill8,
                 item.skill9,
+                item.skill10,
+                item.skill11,
+                item.skill12,
               ].map((skill, skillIndex) => (
                 <li key={skillIndex} className="mx-auto mb-3">
                   <img

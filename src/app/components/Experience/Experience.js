@@ -9,7 +9,8 @@ const Experience = () => {
       company: "PT. Telekomunikasi Indonesia",
       role: "Front-end Developer",
       date: "February 2024 - June 2024",
-      description: "working as front end developer ",
+      description:
+        "Integrating raw data to data visual using Apexchart, and implementing drag and drop using DnDkit library to Dashboard auto insight project.",
     },
     {
       company: "Multimedia Application, Big Data and Cybersecurity Laboratory",
