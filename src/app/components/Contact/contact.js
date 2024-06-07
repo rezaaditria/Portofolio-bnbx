@@ -43,7 +43,7 @@ const Contact = () => {
 
       miniprofile: "/images/poto.jpeg",
 
-      introduce: "Hey, thanks for visiting!",
+      message: "Hey, thanks for visiting!",
 
       Role: "Contact me",
 
@@ -98,7 +98,7 @@ const Contact = () => {
                   <div className="flex items-center">
                     <div className=" text-black text-start ">
                       <p className="text-base md:text-lg font-bold">
-                        {kontak.introduce}
+                        {kontak.message}
                       </p>
                       <p className="text-xs md:text-sm opacity-70">
                         {kontak.Role}

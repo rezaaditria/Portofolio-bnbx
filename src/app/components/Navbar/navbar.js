@@ -25,7 +25,7 @@ const Navbar = () => {
           <div className="flex-1 flex sm:items-stretch sm:justify-start">
             <div className="header">
               <a href="/" className="flex-shrink-0 flex ml-[30px] sm:ml-0">
-                <h1 className="text-white text-4xl font-bold font-sans hover:italic ">
+                <h1 className="text-white text-4xl font-bold font-sans  ">
                   Reza
                 </h1>
                 <h2 className="text-[#FF204E] opacity-80 px-2 hover:text-white">
@@ -36,14 +36,22 @@ const Navbar = () => {
           </div>
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4 justify-end">
-              <a href="#project" onClick={(e) => handleLinkClick(e, "project")}>
-                <div className="hover:text-[#FF204E] text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2">
-                  Projects
-                </div>
-              </a>
               <a href="#skills" onClick={(e) => handleLinkClick(e, "skills")}>
                 <div className="hover:text-[#FF204E] text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2">
                   Skills
+                </div>
+              </a>
+              <a
+                href="#experience"
+                onClick={(e) => handleLinkClick(e, "experience")}
+              >
+                <div className="hover:text-[#FF204E] text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2">
+                  Experiences
+                </div>
+              </a>
+              <a href="#project" onClick={(e) => handleLinkClick(e, "project")}>
+                <div className="hover:text-[#FF204E] text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2">
+                  Projects
                 </div>
               </a>
               <a href="#Contact" onClick={(e) => handleLinkClick(e, "Contact")}>
