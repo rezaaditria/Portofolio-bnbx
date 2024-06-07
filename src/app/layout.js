@@ -7,8 +7,8 @@ import Bubble from "./components/Bubble/Bubble";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Muhammad Reza Aditria",
-  description: "frontend dev",
+  title: "Muhammad Reza Aditria - Front-end Developer",
+  description: "Muhammad Reza Aditria's portofolio",
 };
 
 export default function RootLayout({ children }) {
