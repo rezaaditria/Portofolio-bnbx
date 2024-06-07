@@ -89,13 +89,20 @@ const Boxcustom = ({ items }) => {
                   </a>
                 </div>
               </div>
-              <div className="text-2xl md:text-5xl text-sans text-[#FF204E] text-start font-bold ml-4 md:ml-10 mt-10 md:mt-20 mr-4 md:mr-20">
-                {intro.title}
+              <div className="">
+                <div className="text-2xl md:text-5xl text-sans text-[#FF204E] text-start font-bold ml-4 md:ml-10 mt-10 md:mt-20 mr-4 md:mr-20">
+                  <span className="bg-gradient-to-r from-[#FF204E] via-[#5D0E41] to-[#00224D] bg-clip-text text-transparent">
+                    {intro.title}
+                  </span>
+                </div>
+
+                <div className="text-2xl md:text-5xl text-sans text-[#FF204E] pb-2 max-w-fit text-start font-light ml-4 md:ml-10 mb-4 md:mb-10 mr-4 md:mr-20  ">
+                  <span className="bg-gradient-to-r from-[#FF204E] via-[#5D0E41] to-[#00224D] bg-clip-text text-transparent">
+                    {intro.title2}
+                  </span>
+                </div>
               </div>
-              <div className="text-2xl md:text-5xl text-sans text-[#FF204E] text-start font-bold ml-4 md:ml-10 mb-4 md:mb-10 mr-4 md:mr-20">
-                {intro.title2}
-              </div>
-              <div className="text-sm md:text-xl text-black text-start font-semibold mt-4 md:mt-6 mb-4 md:mb-10 ml-4 md:ml-10 mr-4 md:mr-[100px]">
+              <div className="text-sm md:text-xl text-black text-start font-light mt-4 md:mt-6 mb-4 md:mb-10 ml-4 md:ml-10 mr-4 md:mr-[100px]">
                 {intro.subtitle}
               </div>
               <div className="text-gray-600 mt-2">{intro.description}</div>

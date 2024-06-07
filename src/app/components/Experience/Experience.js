@@ -46,8 +46,8 @@ const Experience = () => {
                   className={`cursor-pointer bg-gradient-to-r from-transparent via-[#00224D] to-transparent text-white p-4 text-center 
                     hover:bg-gradient-to-l hover:from-transparent hover:via-[#5D0E41] hover:to-transparent`}
                 >
-                  <h3 className="text-l font-bold">{exp.company}</h3>
-                  <p className="font-light">{exp.date}</p>
+                  <h3 className="text-l font-semibold">{exp.company}</h3>
+                  <p className="font-extralight">{exp.date}</p>
                 </div>
               ))}
             </div>
@@ -59,9 +59,11 @@ const Experience = () => {
                 {selectedExperience ? (
                   <>
                     <h2 className="text-3xl font-bold text-[#FF204E]">
-                      {selectedExperience.role}
+                      <span className="bg-gradient-to-r from-[#FF204E] via-[#5D0E41] to-[#00224D] bg-clip-text text-transparent">
+                        {selectedExperience.role}
+                      </span>
                     </h2>
-                    <p className="font-light">
+                    <p className="font-extralight">
                       {selectedExperience.description}
                     </p>
                   </>

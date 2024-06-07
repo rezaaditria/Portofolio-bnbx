@@ -96,11 +96,13 @@ const Contact = () => {
               >
                 <div className="flex-shrink-0 flex items-center justify-between mt-4 ml-4 md:ml-10 mr-0">
                   <div className="flex items-center">
-                    <div className=" text-black text-start ">
+                    <div className="text-start ">
                       <p className="text-base md:text-lg font-bold">
-                        {kontak.message}
+                        <span className="bg-gradient-to-r from-[#FF204E] via-[#5D0E41] to-[#00224D] bg-clip-text text-transparent">
+                          {kontak.message}
+                        </span>
                       </p>
-                      <p className="text-xs md:text-sm opacity-70">
+                      <p className="text-xs text-white md:text-sm opacity-70">
                         {kontak.Role}
                       </p>
                     </div>
@@ -126,7 +128,7 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                <div className="text-sm md:text-xl text-white text-justify font-light mt-4 md:mt-6  md:mb-10  md:ml-10  md:mr-10 indent-5">
+                <div className="text-sm md:text-xl text-white text-justify font-extralight mt-4 md:mt-6  md:mb-10  md:ml-10  md:mr-10 indent-5">
                   {kontak.subtitle}
                 </div>
                 <div className="text-gray-600 mt-2">{kontak.description}</div>

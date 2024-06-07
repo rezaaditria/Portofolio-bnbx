@@ -68,8 +68,8 @@ const Projek = () => {
                     className="absolute bottom-0 left-0 w-full flex items-center justify-center opacity-100 transition-opacity duration-500"
                     onTouchMove={handleTouchMove}
                   >
-                    <div className="bg-white w-full max-h-40 overflow-y-auto bg-opacity-80 p-4 rounded-b-3xl md:max-h-none md:h-15">
-                      <h3 className="text-[#FF204E] text-base md:text-xl font-bold font-sans">
+                    <div className="bg-gradient-to-t from-[#00224D]  to-transparent w-full max-h-40 overflow-y-auto bg-opacity-80 p-4 rounded-b-3xl md:max-h-none md:h-15">
+                      <h3 className="text-white text-base md:text-xl font-bold font-sans  ">
                         {item.title}
                       </h3>
                       <p className="text-black mt-2">{item.description}</p>
