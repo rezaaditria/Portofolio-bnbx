@@ -69,7 +69,7 @@ const Boxcustom = ({ items }) => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <a
+                  {/* <a
                     href={intro.linkIG}
                     className="mr-2 transform transition-all hover:scale-110"
                   >
@@ -84,6 +84,15 @@ const Boxcustom = ({ items }) => {
                   >
                     <img
                       src={intro.iconlinked}
+                      className="w-[30px] md:w-[50px] h-auto"
+                    />
+                  </a> */}
+                  <a
+                    href={intro.linkgithub}
+                    className="mr-2 transform transition-all hover:scale-110"
+                  >
+                    <img
+                      src={intro.icongithub}
                       className="w-[30px] md:w-[50px] h-auto"
                     />
                   </a>

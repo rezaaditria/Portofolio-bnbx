@@ -20,6 +20,8 @@ const Home = () => {
       iconIG: "/images/insta.png",
       linklinked: "https://www.linkedin.com/in/rezaaditria/",
       iconlinked: "/images/linkedin.png",
+      linkgithub: "https://github.com/rezaaditria",
+      icongithub: "/images/github.png",
       size: " sm:col-span-1 md:col-span-4 lg:col-span-8",
     },
     {

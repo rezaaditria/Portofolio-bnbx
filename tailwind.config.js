@@ -14,6 +14,30 @@ module.exports = {
         "gradient-rainbow":
           "linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7, #91eae4)",
       },
+      keyframes: {
+        slideIn: {
+          '0%': {
+            transform: 'translateX(-100%)',
+            opacity: 0,
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: 1,
+          },
+        },
+        fadeIn: {
+          '0%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 1,
+          },
+        },
+      },
+        animation: {
+          slideIn: 'slideIn 0.7s ease-in-out',
+          fadeIn: 'fadeIn 0.7s ease-in-out',
+        },
     },
   },
   plugins: [],

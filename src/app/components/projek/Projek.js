@@ -1,47 +1,48 @@
 "use client";
 import React, { useState } from "react";
+import { useInView } from 'react-intersection-observer';
 
 const Projek = () => {
   const [tappedIndex, setTappedIndex] = useState(null);
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger animation only once
+    threshold: 0.2, // Trigger when 20% of the container is in view
+  });
 
   const handleTouchStart = (index) => {
     if (tappedIndex === index) {
-      setTappedIndex(null); // Toggle off if already tapped
+      setTappedIndex(null);
     } else {
-      setTappedIndex(index); // Set the tapped index
+      setTappedIndex(index);
     }
   };
 
   const handleTouchMove = (e) => {
-    e.stopPropagation(); // Prevent parent elements from scrolling
+    e.stopPropagation();
   };
 
   const projek = [
     {
       image: "/images/projek/eos.png",
       title: "Dashboard Auto insight",
-      // description:
-      //   "In the Dashboard Auto Insight project, I focus on crafting the user-friendly interface and diverse charts to visualize data effectively. Collaborating with design and backend teams, my goal is to deliver an efficient frontend experience that empowers users to gain insights effortlessly. The project is owned by PT Telkom Indonesia, where I'm interning.",
       description2: "(organization only, live demo & repository unavailable)",
       size: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      liveLink: null, // Add the live project link here
-      repoLink: null, // Add the repository link here
+      liveLink: null,
+      repoLink: null,
     },
     {
       image: "/images/projek/mbclab.png",
       title: "MBC Laboratory website",
-      // description:
-      //   "As a frontend developer on the MBC Lab project, I design and implement user-friendly interfaces and interactive components. Using modern frontend technologies, I ensure the application is visually appealing, responsive, and intuitive, enhancing the overall user experience. Through close collaboration with the backend team, I facilitate seamless and efficient data interactions, contributing to the project's success.",
       size: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      liveLink: "https://website-umber-alpha.vercel.app/", // Add the live project link here
-      repoLink: "https://github.com/mbclab23/Website/tree/development", // Add the repository link here
+      liveLink: "https://website-umber-alpha.vercel.app/",
+      repoLink: "https://github.com/mbclab23/Website/tree/development",
     },
-    // +++++++++++++++++++++++++++++++++++++++++++++++++
   ];
 
   return (
     <div className="container mx-auto p-1">
-      <div className="mx-4 md:mx-16 lg:mx-36">
+      <div ref={ref} className={`mx-4 md:mx-16 lg:mx-36 transition-opacity duration-2000 ease-in-out 
+        ${inView ? 'animate-fadeIn' : 'opacity-0'}`}>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           {projek.map((item, index) => (
             <div key={index}>
@@ -52,10 +53,10 @@ const Projek = () => {
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.2)",
                   backdropFilter: "blur(10px)",
-                  cursor: "pointer", // Add cursor pointer style
+                  cursor: "pointer",
                 }}
-                onMouseEnter={() => setTappedIndex(index)} // Show text box on hover
-                onMouseLeave={() => setTappedIndex(null)} // Hide text box on hover out
+                onMouseEnter={() => setTappedIndex(index)}
+                onMouseLeave={() => setTappedIndex(null)}
                 onTouchStart={() => handleTouchStart(index)}
               >
                 <img
@@ -68,8 +69,8 @@ const Projek = () => {
                     className="absolute bottom-0 left-0 w-full flex items-center justify-center opacity-100 transition-opacity duration-500"
                     onTouchMove={handleTouchMove}
                   >
-                    <div className="bg-gradient-to-t from-[#00224D]  to-transparent w-full max-h-40 overflow-y-auto bg-opacity-80 p-4 rounded-b-3xl md:max-h-none md:h-15">
-                      <h3 className="text-white text-base md:text-xl font-bold font-sans  ">
+                    <div className="bg-gradient-to-t from-[#00224D] to-transparent w-full max-h-40 overflow-y-auto bg-opacity-80 p-4 rounded-b-3xl md:max-h-none md:h-15">
+                      <h3 className="text-white text-base md:text-xl font-bold font-sans">
                         {item.title}
                       </h3>
                       <p className="text-black mt-2">{item.description}</p>

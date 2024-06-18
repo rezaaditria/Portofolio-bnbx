@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Boxcustom from "../Bento/Boxcustom";
 import { useRef, useEffect } from "react";
+import { useInView } from 'react-intersection-observer';
 
 //  for sizing project:
 //  1-3-6
@@ -10,6 +10,10 @@ import { useRef, useEffect } from "react";
 
 const Contact = () => {
   const imageRef = useRef(null);
+  const { ref, inView } = useInView({
+    triggerOnce: true, 
+    threshold: 0.5, 
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +61,8 @@ const Contact = () => {
 
   return (
     <div className="container mx-auto p-1 mb-20">
-      <div className="mx-4 md:mx-16 lg:mx-32">
+      <div ref={ref} className={`mx-4 md:mx-16 lg:mx-32 mt-4 transition-transform duration-2000 ease-in-out 
+        ${inView ? 'animate-fadeIn' : 'opacity-0'}`}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-4 px-2 md:px-5 py-0">
           {items.map((kontak, index) =>
             kontak.image ? (

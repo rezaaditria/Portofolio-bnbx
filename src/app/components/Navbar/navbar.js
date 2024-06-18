@@ -37,7 +37,7 @@ const Navbar = () => {
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4 justify-end">
               <a href="#skills" onClick={(e) => handleLinkClick(e, "skills")}>
-                <div className=" text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2 font-light">
+                <div className=" text-2xl opacity-80  text-white px-3 py-2 font-light">
                   <span className="hover:bg-gradient-to-r hover:from-[#FF204E] hover:via-[#5D0E41] hover:to-[#00224D] hover:bg-clip-text hover:text-transparent">
                     Skills
                   </span>
@@ -47,21 +47,21 @@ const Navbar = () => {
                 href="#experience"
                 onClick={(e) => handleLinkClick(e, "experience")}
               >
-                <div className="text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2 font-light">
+                <div className="text-2xl opacity-80  text-white px-3 py-2 font-light">
                   <span className="hover:bg-gradient-to-r hover:from-[#FF204E] hover:via-[#5D0E41] hover:to-[#00224D] hover:bg-clip-text hover:text-transparent">
                     Experiences
                   </span>
                 </div>
               </a>
               <a href="#project" onClick={(e) => handleLinkClick(e, "project")}>
-                <div className="text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2 font-light">
+                <div className="text-2xl opacity-80  text-white px-3 py-2 font-light">
                   <span className="hover:bg-gradient-to-r hover:from-[#FF204E] hover:via-[#5D0E41] hover:to-[#00224D] hover:bg-clip-text hover:text-transparent">
                     Projects
                   </span>
                 </div>
               </a>
               <a href="#Contact" onClick={(e) => handleLinkClick(e, "Contact")}>
-                <div className="text-2xl opacity-80 hover:opacity-100 text-white px-3 py-2 font-light">
+                <div className="text-2xl opacity-80  text-white px-3 py-2 font-light">
                   <span className="hover:bg-gradient-to-r hover:from-[#FF204E] hover:via-[#5D0E41] hover:to-[#00224D] hover:bg-clip-text hover:text-transparent">
                     Contact
                   </span>

@@ -1,8 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import { useInView } from 'react-intersection-observer';
 
 const Experience = () => {
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const { ref, inView } = useInView({
+    triggerOnce: true, 
+    threshold: 0.5,
+  });
 
   const experiences = [
     {
@@ -24,12 +29,12 @@ const Experience = () => {
       date: "October 2022 - June 2024",
       description: "Teaching Basic programming using C language.",
     },
-    // Add more experiences here if needed
   ];
 
   return (
     <div className="container mx-auto p-1 mb-20">
-      <div className="mx-4 md:mx-16 lg:mx-32 mt-4">
+      <div ref={ref} className={`mx-4 md:mx-16 lg:mx-32 mt-4 transition-transform duration-2000 ease-in-out 
+        ${inView ? 'animate-fadeIn' : 'opacity-0'}`}>
         <div
           className={`rounded-3xl p-2 md:p-4 text-center `}
           style={{
